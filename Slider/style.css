@@ -29,9 +29,19 @@ button:hover {
     width: 500px;
     height: 500px;
     object-fit: cover;
-    transition: 3s all linear;
-    -webkit-transition: 3s all linear;
-    -moz-transition: 3s all linear;
-    -ms-transition: 3s all linear;
-    -o-transition: 3s all linear;
+    transition: 2s all linear;
+    -webkit-transition: 2s all linear;
+    -moz-transition: 2s all linear;
+    -ms-transition: 2s all linear;
+    -o-transition: 2s all linear;
+}
+
+img:hover {
+    transition: 2s all linear;
+    width: 400px;
+    height: 400px;
+    -webkit-transition: 2s all linear;
+    -moz-transition: 2s all linear;
+    -ms-transition: 2s all linear;
+    -o-transition: 2s all linear;
 }

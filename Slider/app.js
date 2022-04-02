@@ -27,6 +27,7 @@ var ad = document.getElementById("ad");
 var sagbtn = document.getElementById("sag");
 var solbtn = document.getElementById("sol");
 var sekil = document.getElementById('sekil');
+var sup = document.getElementById("suprise");
 let currentItem = 0;
 window.addEventListener("DOMContentLoaded", function() {
     showPerson()
@@ -57,4 +58,8 @@ solbtn.addEventListener("click", function() {
     showPerson(currentItem);
 
 
+});
+sup.addEventListener("click", function() {
+    currentItem = Math.floor(Math.random() * rev.length);
+    showPerson();
 });
