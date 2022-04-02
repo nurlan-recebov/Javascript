@@ -24,3 +24,14 @@ button:hover {
     background-color: blue;
     color: yellow;
 }
+
+.sekil img {
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+    transition: 3s all linear;
+    -webkit-transition: 3s all linear;
+    -moz-transition: 3s all linear;
+    -ms-transition: 3s all linear;
+    -o-transition: 3s all linear;
+}
