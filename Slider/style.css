@@ -37,11 +37,11 @@ button:hover {
 }
 
 img:hover {
-    transition: 2s all linear;
+    transition: 1s all linear;
     width: 400px;
     height: 400px;
-    -webkit-transition: 2s all linear;
-    -moz-transition: 2s all linear;
-    -ms-transition: 2s all linear;
-    -o-transition: 2s all linear;
+    -webkit-transition: 1s all linear;
+    -moz-transition: 1s all linear;
+    -ms-transition: 1s all linear;
+    -o-transition: 1s all linear;
 }

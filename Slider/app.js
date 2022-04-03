@@ -40,7 +40,7 @@ function showPerson() {
     ad.textContent = item.name;
 
 }
-let i = -1
+
 sagbtn.addEventListener("click", function() {
     currentItem++;
 
