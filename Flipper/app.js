@@ -1,7 +1,7 @@
 const btn = document.querySelector('.btn');
 const con = document.querySelector('.container');
 const bac = document.querySelector('.back');
-const arran = ["green", "red", "blue", "yellow", "black", "orange", "pink"]
+const arran = ["green", "red", "blue", "yellow", "black", "orange", "pink", "#456789"]
 let i = 0;
 btn.addEventListener("click", function() {
 
