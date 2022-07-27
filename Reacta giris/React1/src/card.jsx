@@ -5,26 +5,20 @@ class Card extends React.Component {
     constructor() {
         super();
         this.state = {
-            showcontent: true
-        }
-        this.showmore=()=>{
-            this.setState({showcontent:false})
-        }
+            showcontent: false
+        }      
     }
-// showmore(){
-//     this.setState({showcontent:true})
-// }
+            showmore=()=>{
+            this.setState({showcontent: !this.state.showcontent})
+        }
+
     render() {
 
-        return (
-       
-
-
+        return (    
 <div className="App-items">
 <button onClick={this.showmore}>Click</button>
     {this.state.showcontent ?(
-<div >
-  
+    <div >  
      {this.props.children}
     </div>
 ) : null}

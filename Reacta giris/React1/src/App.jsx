@@ -3,12 +3,7 @@ import { useState } from 'react'
 import './App.css'
 import Card from './card';
 class App extends React.Component {
-    constructor() {
-        super();
-        this.state = {
-            showcontent: false
-        }
-    }
+   
 
     render() {
 
