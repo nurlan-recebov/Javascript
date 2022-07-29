@@ -22,11 +22,7 @@ class Card extends React.Component {
      {this.props.children}
     </div>
 ) : null}
-</div>
-
-
-       
-          
+</div>   
 
            
 
