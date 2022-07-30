@@ -6,10 +6,12 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 
 
 ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='d-flex'>
+  <div className=''>
     <App></App>
-    <App></App>
-    <App></App>
+   
+    
+    
+  
   
   </div>
 )
