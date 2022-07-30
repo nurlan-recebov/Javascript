@@ -50,14 +50,14 @@ class App extends React.Component{
         "ImageUrl":"https://flxt.tmsimg.com/assets/p13053_p_v12_bh.jpg"
       },
       {
-        "id":6,
+        "id":7,
         'Name':"The Hunger Games",
         'Rating':"9.6",
         'Overview':"Popular film",
         "ImageUrl":"https://m.media-amazon.com/images/M/MV5BNjQzNDI2NTU1Ml5BMl5BanBnXkFtZTgwNTAyMDQ5NjE@._V1_.jpg"
       },
       {
-        "id":6,
+        "id":8,
         'Name':"Sex education",
         'Rating':"8.4",
         'Overview':"Netflix series",
@@ -66,13 +66,25 @@ class App extends React.Component{
 
     ]
   }
+  deleteMovie = (movie) =>{
+   const newMovelist = this.state.movies.filter(
+    m => m.id !==movie.id
+   )
+   this.setState({
+    movies:newMovelist
+   }
+
+   )
+  }
   render(){
     return (
       <div className="container">
       <div className='row'>
           <div className=''>
          
-          <Movelist movies={this.state.movies}>
+          <Movelist movies={this.state.movies}
+          deleteMovieProp={this.deleteMovie}
+          >
         
         </Movelist>
           
