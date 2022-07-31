@@ -70,28 +70,25 @@ class App extends React.Component{
    const newMovelist = this.state.movies.filter(
     m => m.id !==movie.id
    )
-   this.setState({
+  //  this.setState({
+  //   movies:newMovelist
+  //  })
+  this.setState(state =>({
     movies:newMovelist
-   }
-
-   )
+  }))
   }
   render(){
     return (
       <div className="container">
       <div className='row'>
-          <div className=''>
+         <Searchbar></Searchbar>
          
-          <Movelist movies={this.state.movies}
+      </div>
+      <Movelist movies={this.state.movies}
           deleteMovieProp={this.deleteMovie}
           >
         
         </Movelist>
-          
-       
-          </div>
-         
-      </div>
      
       </div>
     )
