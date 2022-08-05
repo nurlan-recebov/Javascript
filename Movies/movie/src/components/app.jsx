@@ -3,7 +3,9 @@ import Movelist from './Movelist'
 import Searchbar from './Searchbar'
 import React from 'react'
 
+
 import './app.css'
+
 
 class App extends React.Component{
   state={
@@ -18,10 +20,15 @@ class App extends React.Component{
     console.log(data)
     this.setState({movies: data})
   }
-  deleteMovie = (movie) =>{
+  deleteMovie = async (movie) =>{
+    const URL =   `http://localhost:3002/movies/${movie.id}`;
+    await fetch(URL,{
+      method:"Delete"
+    })
    const newMovelist = this.state.movies.filter(
     m => m.id !==movie.id
-   )
+
+    )
   //  this.setState({
   //   movies:newMovelist
   //  })
@@ -36,22 +43,23 @@ class App extends React.Component{
   render(){
     let filteredMovies = this.state.movies.filter(
       (movie) => {
-        return movie.Name.toLowerCase().indexOf(this.state.searchQuery.toLowerCase()) !== -1
+    return movie.Name.toLowerCase().indexOf(this.state.searchQuery.toLowerCase()) !== -1
       }
     )
     return (
-      <div className="container">
-      <div className='row'>
-         <Searchbar searchMovieProp={this.searchMovie}></Searchbar>
-         
-      </div>
-      <Movelist movies={filteredMovies}
-          deleteMovieProp={this.deleteMovie}
-          >
+      <div>
+    <Searchbar searchMovieProp={this.searchMovie}/>
+    <Movelist movies={filteredMovies}deleteMovieProp={this.deleteMovie}/>
+      
+       </div>  
+       
+       
         
-        </Movelist>
+           
+   
+
      
-      </div>
+      
     )
   }
 }
