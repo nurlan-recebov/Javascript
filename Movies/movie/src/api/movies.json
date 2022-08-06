@@ -48,6 +48,20 @@
       "Rating": "8.4",
       "Overview": "Netflix series",
       "ImageUrl": "https://m.media-amazon.com/images/M/MV5BOTE0MjQ1NDU3OV5BMl5BanBnXkFtZTgwNTI4MTgwNzM@._V1_.jpg"
+    },
+    {
+      "Name": "Avatar",
+      "Rating": "9",
+      "ImageUrl": "https://upload.wikimedia.org/wikipedia/tr/1/12/Avatar-Film-Posteri.jpg",
+      "Overview": "Popular film",
+      "id": 9
+    },
+    {
+      "Name": "Don't Breathe",
+      "Rating": "7.4",
+      "ImageUrl": "https://m.media-amazon.com/images/M/MV5BZGI5ZTU2M2YtZWY4MC00ZDFhLTliYTItZTk1NjdlN2NkMzg2XkEyXkFqcGdeQXVyMjY5ODI4NDk@._V1_.jpg",
+      "Overview": "Popular",
+      "id": 10
     }
   ]
 }

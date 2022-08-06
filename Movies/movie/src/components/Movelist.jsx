@@ -5,8 +5,8 @@ const Movelist = (props) =>{
         return(
             <div className='container'> 
             <div className='row'>
-            {props.movies.map((movie) => (
-             <div className='col-lg-3' key={movie.id}>
+            {props.movies.map((movie,i) => (
+             <div className='col-lg-3' key={i}>
              <div className='card mb-4 shadow-sm'>
            <img className='card-img-top' src={movie.ImageUrl} alt="" srcset="" />
             <div className='card-body'>
