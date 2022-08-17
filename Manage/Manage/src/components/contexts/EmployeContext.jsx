@@ -1,10 +1,10 @@
 import { createContext, useState } from "react";
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 export const EmployeContext = createContext();
 const EmployeContextProvider = (props) => {
-  const [employes] = useState([
+  const [employes, setEmployess] = useState([
     {
-      id:uuidv4(),
+      id: uuidv4(),
       name: "Thomas Hardy",
       email: "thomashardy@mail.com",
       address: "89 Chiaroscuro Rd, Portland, USA",
@@ -39,6 +39,19 @@ const EmployeContextProvider = (props) => {
       phone: "(480) 631-2097",
     },
   ]);
-  return <EmployeContext.Provider value={{employes}}>{props.children}</EmployeContext.Provider>;
+  const addEmployee = (name, email, address, phone) => {
+    setEmployess([...employes, { id: uuidv4(), name, email, address, phone }]);
+  };
+  const deleteEmploye =(id)=>{
+    setEmployess(employes.filter(employe=>employe.id!==id))
+  }
+  const updateEmploye=(id,updatedEmploye)=>{
+    setEmployess(employes.map((employe)=>(employe.id===id? updatedEmploye:employe)))
+  }
+  return (
+    <EmployeContext.Provider value={{ employes, addEmployee,deleteEmploye,updateEmploye }}>
+      {props.children}
+    </EmployeContext.Provider>
+  );
 };
 export default EmployeContextProvider;

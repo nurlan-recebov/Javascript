@@ -1,15 +1,26 @@
 import Employe from "./Employe";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { EmployeContext } from "./contexts/EmployeContext";
-import { Button, Modal } from "react-bootstrap";
-
+import { Button, Modal, Alert } from "react-bootstrap";
+import Pagination from "./pagination";
 import AddForm from "./AddForm";
 const EmployeList = () => {
   const { employes } = useContext(EmployeContext);
   const [show, setShow] = useState(false);
-  
- const handleClose = () => setShow(false);
- const handleShow = () => setShow(true);
+  const [showAlert, setShowAlert] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+  const handleShowAlert = () => {
+    setShowAlert(true)
+    setTimeout(() => {setShowAlert(false);},2000);
+  };
+  useEffect(() => {
+    handleClose();
+    return () => {
+      handleShowAlert();
+    };
+  }, [employes]);
+
   return (
     <>
       <div className="table-title">
@@ -31,6 +42,9 @@ const EmployeList = () => {
           </div>
         </div>
       </div>
+      <Alert show={showAlert} variant="success" dismissible>
+        Employyelist successfully updated
+      </Alert>
       <table className="table table-striped table-hover">
         <thead>
           <tr>
@@ -42,9 +56,15 @@ const EmployeList = () => {
           </tr>
         </thead>
         <tbody>
-          <Employe employes={employes} />
+          {employes.map((employe) => (
+            <tr key={employe.id}>
+              <Employe employe={employe} />
+            </tr>
+          ))}
         </tbody>
+        
       </table>
+      <Pagination></Pagination>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header className="modal-header" closeButton>
           <Modal.Title>Add Employee</Modal.Title>

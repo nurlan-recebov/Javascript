@@ -67,7 +67,7 @@ table.table tr td {
 }
 
 table.table tr th:last-child {
-    width: 100px;
+    width: 150px;
 }
 
 table.table-striped tbody tr:nth-of-type(odd) {
@@ -182,11 +182,19 @@ table.table .avatar {
 .modal .modal-content {
     border-radius: 3px;
     font-size: 14px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    -ms-border-radius: 3px;
+    -o-border-radius: 3px;
 }
 
 .modal .modal-footer {
     background: #ecf0f1;
     border-radius: 0 0 3px 3px;
+    -webkit-border-radius: 0 0 3px 3px;
+    -moz-border-radius: 0 0 3px 3px;
+    -ms-border-radius: 0 0 3px 3px;
+    -o-border-radius: 0 0 3px 3px;
 }
 
 .modal .modal-title {
