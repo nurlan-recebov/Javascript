@@ -8,11 +8,15 @@ const EmployeList = () => {
   const { employes } = useContext(EmployeContext);
   const [show, setShow] = useState(false);
   const [showAlert, setShowAlert] = useState(false);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [employesPerPage] = useState(2);
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const handleShowAlert = () => {
-    setShowAlert(true)
-    setTimeout(() => {setShowAlert(false);},2000);
+    setShowAlert(true);
+    setTimeout(() => {
+      setShowAlert(false);
+    }, 2000);
   };
   useEffect(() => {
     handleClose();
@@ -20,7 +24,13 @@ const EmployeList = () => {
       handleShowAlert();
     };
   }, [employes]);
-
+  const indexOfLastEmploye = currentPage * employesPerPage;
+  const indexOfFirstEmploye = indexOfLastEmploye - employesPerPage;
+  const currentEmployes = employes.slice(
+    indexOfFirstEmploye,
+    indexOfLastEmploye
+  );
+  const totalPageNum = Math.ceil(employes.length / employesPerPage);
   return (
     <>
       <div className="table-title">
@@ -56,15 +66,19 @@ const EmployeList = () => {
           </tr>
         </thead>
         <tbody>
-          {employes.map((employe) => (
+          {currentEmployes.map((employe) => (
             <tr key={employe.id}>
               <Employe employe={employe} />
             </tr>
           ))}
         </tbody>
-        
       </table>
-      <Pagination></Pagination>
+      <Pagination
+        pages={totalPageNum}
+        setCurrentPage={setCurrentPage}
+        currentEmployes={currentEmployes}
+      employes={employes}
+      ></Pagination>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header className="modal-header" closeButton>
           <Modal.Title>Add Employee</Modal.Title>
