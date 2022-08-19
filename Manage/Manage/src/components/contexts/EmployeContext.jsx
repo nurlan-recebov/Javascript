@@ -1,4 +1,4 @@
-import { createContext, useState } from "react";
+import { createContext, useState,useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 export const EmployeContext = createContext();
 const EmployeContextProvider = (props) => {
@@ -38,18 +38,30 @@ const EmployeContextProvider = (props) => {
       address: "Via Monte Bianco 34, Turin, Italy",
       phone: "(480) 631-2097",
     },
-  ]);
+  ])
+  useEffect(() => {
+    const employes = localStorage.getItem('employes')
+    setEmployess(JSON.parse(employes))
+  },[])
+  useEffect(() => {
+    localStorage.setItem('employes', JSON.stringify(employes))
+  })
   const addEmployee = (name, email, address, phone) => {
     setEmployess([...employes, { id: uuidv4(), name, email, address, phone }]);
   };
-  const deleteEmploye =(id)=>{
-    setEmployess(employes.filter(employe=>employe.id!==id))
-  }
-  const updateEmploye=(id,updatedEmploye)=>{
-    setEmployess(employes.map((employe)=>(employe.id===id? updatedEmploye:employe)))
-  }
+  const deleteEmploye = (id) => {
+    setEmployess(employes.filter((employe) => employe.id !== id));
+  };
+  const updateEmploye = (id, updatedEmploye) => {
+    setEmployess(
+      employes.map((employe) => (employe.id === id ? updatedEmploye : employe))
+    );
+  };
+
   return (
-    <EmployeContext.Provider value={{ employes, addEmployee,deleteEmploye,updateEmploye }}>
+    <EmployeContext.Provider
+      value={{ employes, addEmployee, deleteEmploye, updateEmploye }}
+    >
       {props.children}
     </EmployeContext.Provider>
   );

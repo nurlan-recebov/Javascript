@@ -31,6 +31,7 @@ const EmployeList = () => {
     indexOfLastEmploye
   );
   const totalPageNum = Math.ceil(employes.length / employesPerPage);
+  
   return (
     <>
       <div className="table-title">
