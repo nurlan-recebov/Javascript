@@ -38,11 +38,30 @@ const EmployeContextProvider = (props) =>{
               D:"Katy Perry",
               dogru:"Dua lipa"
               },
+              {id:5,
+                img:"https://cdns-images.dzcdn.net/images/artist/4099da261a61666f58bb3598f0c4c37f/500x500.jpg",
+                sual:"Bu kimdir ?",
+                A:"Ava Max",
+                B:"Selena Gomez",
+                C:"Dua lipa",
+                D:"Miley Cyrus",
+                dogru:"Ava Max"
+                },
           
          ])
+         const addEmployee = (img, sual, A,B,C,D,dogru) => {
+          setasks([...asks, { id:"", img, sual, A,B,C,D,dogru }]);
+        };
+        useEffect(() => {
+          const asks = localStorage.getItem('asks')
+          setasks(JSON.parse(asks))
+        },[])
+        useEffect(() => {
+          localStorage.setItem('asks', JSON.stringify(asks))
+        })
          return (
             <EmployeContext.Provider
-              value={{ asks}}
+              value={{ asks,addEmployee}}
             >
               {props.children}
             </EmployeContext.Provider>
