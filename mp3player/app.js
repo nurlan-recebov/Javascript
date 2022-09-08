@@ -4,8 +4,15 @@ const img = document.querySelector(".img");
 const name = document.querySelector(".name");
 const music = document.querySelector(".music");
 const next = document.querySelector("#next");
-const prev = document.querySelector("#prev");;
-const container = document.querySelector(".container")
+const prev = document.querySelector("#prev");
+const container = document.querySelector(".container");
+const duration = document.querySelector("#duration");
+const currenttime = document.querySelector("#current-time");
+const progressBar = document.querySelector("#progress-bar");
+const volume = document.querySelector("#volume");
+const volumeBar = document.querySelector("#volume-bar");
+const ul = document.querySelector("ul");
+
 let index = 0;
 
 const singer = [{
@@ -29,55 +36,106 @@ const singer = [{
 ];
 
 window.addEventListener("DOMContentLoaded", function() {
-    showPerson()
-
+    showPerson();
+    DisplayMusicList();
 });
 
-function showPerson() {
-
-
+const showPerson = () => {
     img.src = `${singer[index].img}`;
     document.querySelector(".name").innerHTML = `${singer[index].name}`;
     audio.src = `${singer[index].music}`;
+};
 
-}
-
-function play3() {
+const play3 = () => {
     index++;
 
     if (index > singer.length - 1) {
         index = 0;
     }
     showPerson(index);
-    playMusic()
-}
+    playMusic();
+};
 
-function play1() {
+const play1 = () => {
     index--;
 
     if (index < 0) {
-        index = singer.length - 1
+        index = singer.length - 1;
     }
     showPerson(index);
-    playMusic()
-}
+    playMusic();
+};
 
+const play2 = () => {
+    const isMusicPlay = container.classList.contains("playing");
+    isMusicPlay ? pauseMusic() : playMusic();
+};
 
-function play2() {
-    const isMusicPlay = container.classList.contains("playing")
-    isMusicPlay ? pauseMusic() : playMusic()
+const pauseMusic = () => {
+    container.classList.remove("playing");
+    play.classList = "fa-solid fa-play";
+    audio.pause();
+};
 
-}
+const playMusic = () => {
+    container.classList.add("playing");
 
-function pauseMusic() {
-    container.classList.remove('playing')
-    play.classList = "fa-solid fa-play"
-    audio.pause()
-}
-
-function playMusic() {
-    container.classList.add('playing')
-
-    play.classList = "fa-solid fa-pause"
-    audio.play()
-}
+    play.classList = "fa-solid fa-pause";
+    audio.play();
+};
+const calculateTime = (toplamSaniye) => {
+    const dakika = Math.floor(toplamSaniye / 60);
+    const saniye = Math.floor(toplamSaniye % 60);
+    const guncelenenSaniye = saniye < 10 ? `0${saniye}` : `${saniye}`;
+    const sonuc = `${dakika}:${guncelenenSaniye}`;
+    return sonuc;
+};
+audio.addEventListener("loadedmetadata", () => {
+    duration.textContent = calculateTime(audio.duration);
+    progressBar.max = Math.floor(audio.duration);
+});
+audio.addEventListener("timeupdate", () => {
+    progressBar.value = Math.floor(audio.currentTime);
+    currenttime.textContent = calculateTime(progressBar.value);
+});
+progressBar.addEventListener("input", () => {
+    currenttime.textContent = calculateTime(progressBar.value);
+    audio.currentTime = progressBar.value;
+});
+let sesDurumu = "sesli";
+volumeBar.addEventListener("input", (e) => {
+    const value = e.target.value;
+    audio.volume = value / 100;
+    if (value == 0) {
+        audio.muted = true;
+        sesDurumu = "sessiz";
+        volume.classList = "fa-solid fa-volume-xmark";
+    } else {
+        audio.muted = false;
+        sesDurumu = "sesli";
+        volume.classList = "fa-solid fa-volume-high";
+    }
+});
+volume.addEventListener("click", () => {
+    if (sesDurumu === "sesli") {
+        audio.muted = true;
+        sesDurumu = "sessiz";
+        volume.classList = "fa-solid fa-volume-xmark";
+        volumeBar.value = "0";
+    } else {
+        audio.muted = false;
+        sesDurumu = "sesli";
+        volume.classList = "fa-solid fa-volume-high";
+        volumeBar.value = "100";
+    }
+});
+const DisplayMusicList = () => {
+    for (let a = 0; a < singer.length; a++) {
+        let litag = `<li class=" bg-warning w-100 d-flex justify-content-between">
+        <span class="text-dark">
+        ${singer[a].name} </span>       
+        <span class = "text-dark" > 3: 34 </span>
+         </li>`;
+        ul.insertAdjacentHTML("beforeend", litag);
+    }
+};
