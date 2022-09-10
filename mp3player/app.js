@@ -13,6 +13,7 @@ const volume = document.querySelector("#volume");
 const volumeBar = document.querySelector("#volume-bar");
 const ul = document.querySelector("ul");
 
+
 let index = 0;
 
 const singer = [{
@@ -30,7 +31,7 @@ const singer = [{
     {
         id: 3,
         img: "https://upload.wikimedia.org/wikipedia/tr/thumb/b/bc/G%C3%BCl%C5%9Fen_feat._Murat_Boz_-_%C4%B0ltimas.jpg/800px-G%C3%BCl%C5%9Fen_feat._Murat_Boz_-_%C4%B0ltimas.jpg",
-        name: "Murat boz & Gulsen",
+        name: "Murat boz",
         music: "mp3/3.mp3",
     },
 ];
@@ -129,13 +130,30 @@ volume.addEventListener("click", () => {
         volumeBar.value = "100";
     }
 });
-const DisplayMusicList = () => {
+const DisplayMusicList = (a) => {
     for (let a = 0; a < singer.length; a++) {
-        let litag = `<li class=" bg-warning w-100 d-flex justify-content-between">
+        let litag = `<li li-index='${a}' onclick="selectedMusic(this)" class="bg-warning w-100 d-flex justify-content-between">
         <span class="text-dark">
         ${singer[a].name} </span>       
-        <span class = "text-dark" > 3: 34 </span>
+        <span id="music-${a}" class = "text-dark" > 3: 34 </span>
+        <audio class="music-${a}" src="${singer[a].music}"></audio>
          </li>`;
         ul.insertAdjacentHTML("beforeend", litag);
+        let liAuidoDuration = ul.querySelector(`#music-${a}`)
+        let liAuidoTag = ul.querySelector(`.music-${a}`)
+        liAuidoTag.addEventListener("loadeddata", () => {
+            liAuidoDuration.innerHTML = calculateTime(liAuidoTag.duration)
+        })
     }
+
 };
+const li = ul.getAttribute('li')
+const selectedMusic = (li) => {
+    const indexx = li.getAttribute('li-index')
+    singer.index = indexx
+    showPerson(indexx)
+    playMusic();
+}
+audio.addEventListener('ended', () => {
+    play3()
+})
