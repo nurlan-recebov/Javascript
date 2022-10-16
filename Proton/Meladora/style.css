@@ -17,6 +17,7 @@ body {
 
 i {
     color: green;
+    margin-left: 6px;
 }
 
 #home-item {
@@ -30,8 +31,13 @@ i {
     color: #ffbb00;
 }
 
-img {
-    object-fit: cover;
+.about-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
 }
 
 main {
@@ -40,4 +46,61 @@ main {
     display: flex;
     justify-content: center;
     flex-direction: column;
+}
+
+.img {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+ul {
+    list-style-type: none;
+}
+
+li {
+    margin-left: 10px;
+    font-weight: 700;
+}
+
+.desc {
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+.box {
+    margin-left: 20px;
+}
+
+#Mehsul img {
+    width: 150px;
+    object-fit: cover;
+}
+
+.img {
+    max-width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+
+.blog-item {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.footer {
+    background-image: url('img/ezgif.com-gif-maker\ \(1\).jpg');
+    width: 100%;
+    height: 330px;
+}
+
+.footer-items {
+    margin-top: 40px;
+    position: absolute;
+}
+
+.footer-item {
+    justify-content: center;
 }
