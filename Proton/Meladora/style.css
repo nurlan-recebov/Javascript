@@ -104,3 +104,9 @@ li {
 .footer-item {
     justify-content: center;
 }
+
+#navbar {
+    position: fixed;
+    width: 100%;
+    left: 0;
+}
