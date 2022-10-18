@@ -137,3 +137,24 @@ li a i {
 #contact i {
     color: green;
 }
+
+#search {
+    display: none;
+    position: absolute;
+    top: 40px;
+    background: none;
+}
+
+#search.show {
+    display: block;
+}
+
+#Mehsul li.active {
+    background: #03a9f4;
+    color: white;
+    padding: 10px;
+}
+
+.hide {
+    display: none;
+}
