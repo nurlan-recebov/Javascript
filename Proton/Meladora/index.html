@@ -13,9 +13,10 @@
 
 <body>
     <section id="home" class="Home">
+
         <div class="shadow"></div>
         <div class="d-flex justify-content-center align-items-center">
-            <div id="home-item" class="container w-100">
+            <div id="home-item" class="w-100">
                 <header id="contact" class="d-flex justify-content-md-between align-items-center pt-3 mt-2 border-bottom border-white ">
                     <div class="d-flex text text-white">
                         <i class="fa-solid fa-phone px-2 "></i>
@@ -41,7 +42,7 @@
                         <div class="collapse navbar-collapse" id="navbarText">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item ">
-                                    <a class="nav-link" href="#Biz">Biz kimik? </a>
+                                    <a class="nav-link" href="/about/about.html">Biz kimik? </a>
                                 </li>
                                 <li class="nav-item">
                                     <a class="nav-link" href="#baglar">Bağlarımız</a>
@@ -62,21 +63,27 @@
                                 <li class="nav-item" id="btn" onclick="myFunction()">
                                     <a class="nav-link" href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
                                 </li>
-                                <div id="search" class=" row w-100  " style="height:100px; margin-top:100px;">
-                                    <div class="d-flex justify-content-center align-items-center" style="height: 100px;">
-                                        <div class="input-group mb-3  justify-content-center align-items-center">
-                                            <input type="text" class="form-control" placeholder="Axtarış" aria-label="Recipient'same" aria-describedby="basic-addon2">
-                                            <div class="input-group-append ms-2 ">
-                                                <button class="btn btn-outline-secondary" type="button">Axtar</button>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+
                             </ul>
 
                         </div>
 
+
                     </nav>
+
+                    <div id="search" class="">
+                        <div id="close"><i class="fa-solid fa-xmark"></i></div>
+                        <div class=" justify-content-center align-items-center mt-5">
+
+                            <div class="input-group mb-3  justify-content-center align-items-center p-5">
+                                <input type="text" class="form-control" placeholder="Axtarış" aria-label="Recipient'same" aria-describedby="basic-addon2">
+                                <div class="input-group-append ms-2 ">
+                                    <button class="btn btn-outline-secondary" type="button">Axtar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
 
             </div>
@@ -87,6 +94,7 @@
                 <div class="scroll-item">
                     <i class="fa-solid fa-chevron-up"></i>
                 </div>
+
             </a>
         </div>
 
@@ -155,7 +163,7 @@
                             <img src="img/Path 37.svg " alt=" " sizes=" " srcset=" " style="max-width:100%;">
                         </div>
                         <div class="d-flex justify-content-center ">
-                            <div class="ms-5 ">
+                            <div class="">
                                 <img src="img/Path 24.png " alt=" " srcset=" ">
                                 <p>Organik</p>
                             </div>
@@ -185,21 +193,21 @@
             <h3>Bağlarımız</h3>
             <img src="img/Group 11.png " alt=" " srcset=" ">
         </div>
-        <div class="row  justify-content-center gx-0">
-            <div class="col-3 ms-5">
-                <h1 style="color:#918F8F; font-size:70px;"> 01</h1>
+        <div class="row  justify-content-center gx-0 ml-0" style="flex-wrap: wrap ;">
+            <div class="col-4">
+                <h1 style="color:#918F8F;"> 01</h1>
                 <h4>BAĞ</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
                 <img src="img/karina-vorozheeva-brQS8ihqRq4-unsplash.jpg" alt="" srcset="">
             </div>
-            <div class="col-3 ms-5"><img src="img/adele-payman-2oYMwuFgnTg-unsplash.jpg" alt="" srcset="">
+            <div class="col-4 ms-5"><img src="img/adele-payman-2oYMwuFgnTg-unsplash.jpg" alt="" srcset="">
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
                 <h4>BAĞ</h4>
-                <h1 style="color:#918F8F; font-size:70px;"> 02</h1>
+                <h1 style="color:#918F8F; "> 02</h1>
 
             </div>
-            <div class="col-3 ms-5">
-                <h1 style="color:#918F8F; font-size:70px;"> 03</h1>
+            <div class="col-4 ms-5">
+                <h1 style="color:#918F8F;"> 03</h1>
                 <h4>BAĞ</h4>
                 <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry’s standard dummy text ever since the 1500s.</p>
                 <img src="img/markus-winkler-HeqXGxnsnX4-unsplash.jpg" alt="">
@@ -212,7 +220,7 @@
             <h3>Məhsullarımız</h3>
             <img src="img/Group 11.png " alt=" " srcset=" ">
         </div>
-        <ul class="d-flex justify-content-center mt-3 ">
+        <ul class="d-flex justify-content-center " style="flex-wrap:wrap ;">
             <li class="list active" style=" cursor: pointer;" data-filter="all">Hamısı</li>
             <li class="list" style=" cursor: pointer;" data-filter="meyve">Meyvələr</li>
             <li class="list" style=" cursor: pointer;" data-filter="terevez">Tərəvəzlər</li>
@@ -340,7 +348,7 @@
                 <div class="footer-item text-white d-flex border-bottom border-white p-4 " style="flex-wrap:wrap ; ">
                     <div> <img src=" img/Group 418.png " alt=" " srcset=" "></div>
                     <div>
-                        <h6>Menyular</h6>
+                        <h5>Menyular</h5>
                         <ul>
                             <li>Biz kimik</li>
                             <li>Bağlarımız</li>
@@ -352,7 +360,7 @@
 
                     </div>
                     <div>
-                        <h6>Faydalı linklər</h6>
+                        <h5>Faydalı linklər</h5>
                         <ul>
                             <li>Tez-tez soruşulanlar</li>
                             <li>Karyera</li>

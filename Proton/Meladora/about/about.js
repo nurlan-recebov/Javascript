@@ -3,6 +3,7 @@ const scrol = document.querySelector('.scroll-items');
 const btn = document.querySelector('#btn')
 const search = document.querySelector('#search')
 const searchitems = document.querySelector('#search-items')
+const li = document.querySelectorAll('.nav-item a')
 window.onscroll = function() {
     scrollFunction();
 };
@@ -19,13 +20,16 @@ function scrollFunction() {
         navbar.style.borderBottom = '3px solid #ffbb00'
         navbar.style.zIndex = '1'
 
+
+
     } else {
 
-        navbar.style.background = "none"
-        navbar.style.top = "60px"
+        navbar.style.backgroundColor = "white"
+        navbar.style.top = "43px"
         scrol.style.display = 'none'
         navbar.style.borderBottom = 'none'
         navbar.style.zIndex = '0'
+
 
     }
 }
