@@ -1,283 +1,351 @@
-body {
-    margin: 0 auto;
-}
-
-.Home {
-    background-image: url('https://mela-dora.com/assets/img/main/home-banner-1.jpg');
-    width: 100%;
-    height: 630px;
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-#home-item {
-    position: absolute;
-    top: 0%;
-    max-width: 100%;
-    height: 630px;
-}
-
-.navbar-custom .navbar-nav .nav-link {
-    color: #ffbb00;
-}
-
-.about-image {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    width: 100%;
-    height: 100%;
-    flex-direction: column;
-}
-
-.about-image img {
-    object-fit: cover;
-}
-
-main {
-    margin-top: -110px;
-    position: absolute;
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    right: 30px;
-}
-
-.img {
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-
-ul {
-    list-style-type: none;
-}
-
-li {
-    margin-left: 10px;
-    font-weight: 700;
-}
-
-.desc {
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
-}
-
-.box {
-    margin-left: 20px;
-}
-
-#Mehsul img {
-    width: 150px;
-    object-fit: cover;
-}
-
-.shadow {
-    height: 630px;
-    background-color: rgba(0, 0, 0, 0.8);
-}
-
-.img {
-    max-width: 100%;
-    height: 100vh;
-    object-fit: cover;
-}
-
-.blog-item {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
-
-.footer {
-    width: 100%;
-    height: 400px;
-    color: black;
-    background-image: url('https://mela-dora.com/assets/img/pattern/footer-curve.svg');
-    object-fit: cover;
-}
-
-.footer-items {
-    margin-top: 150px;
-    position: absolute;
-    background-color: #F3F3F3;
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-}
-
-#navbar {
-    position: fixed;
-    width: 100%;
-    left: 0;
-    background-color: white;
-}
-
-.scroll-item {
-    right: 20px;
-    background: var(--tertiary-design-color);
-    color: var(--secondary-text-color);
-    font-size: var(--block-heading-md);
-    border: none;
-    cursor: pointer;
-    bottom: 10px;
-    position: fixed;
-    width: 40px;
-    height: 40px;
-    background-color: #ffbb00;
-    color: white;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 2px 5px 0px rgb(0 0 0 / 10%);
-}
-
-.scroll-items {
-    display: none;
-}
-
-li a i {
-    font-size: 25px;
-    color: black;
-}
-
-#contact i {
-    color: black;
-    font-size: 15px;
-}
-
-#search {
-    display: none;
-    position: absolute;
-    top: 40px;
-    background: none;
-    background-color: rgba(0, 0, 0, 0.8);
-    left: 0;
-    right: 0;
-    height: 100vh;
-    align-items: center;
-    justify-content: center;
-    margin-top: 20px;
-}
-
-#search.show {
-    display: block;
-}
-
-#Mehsul li.active {
-    background: #03a9f4;
-    color: white;
-    padding: 10px;
-}
-
-#Mehsul li {
-    padding: 10px;
-    margin-bottom: 30px;
-    font-weight: 400;
-}
-
-.hide {
-    display: none;
-}
-
-#baglar h1 {
-    font-weight: 400;
-    font-size: 80px;
-}
-
-#close {
-    position: absolute;
-    right: 10px;
-    cursor: pointer;
-}
-
-#close i {
-    font-size: 25px;
-    color: aliceblue;
-}
-
-#search.none {
-    display: none;
-}
-
-a {
-    text-decoration: none;
-    color: black;
-    font-weight: 200px;
-}
-
-.btn-general {
-    position: relative;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-width: 160px;
-    height: 45px;
-    background-color: transparent;
-    border: 1px solid var(--primary-design-color);
-    color: var(--primary-design-color);
-    font-size: var(--font-size-sm);
-    font-weight: 500;
-    padding: 10px 15px;
-    overflow: hidden;
-    border-radius: 3px;
-    -webkit-border-radius: 3px;
-    -moz-border-radius: 3px;
-    -ms-border-radius: 3px;
-    -o-border-radius: 3px;
-}
-
-.btn-general:after {
-    position: absolute;
-    content: '';
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url(../img/Group\ 6.png);
-    background-repeat: no-repeat;
-    background-size: 30px;
-    background-position: bottom right;
-}
-
-#img-items img {
-    object-fit: cover;
-    width: 352px;
-    height: 400px;
-    margin-bottom: 20px;
-}
-
-.img-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.nav-item a {
-    color: black;
-}
-
-.footer-img {
-    width: 200px;
-}
-
-.footer-items h5 {
-    font-weight: 600;
-    font-size: var(--block-heading-sm);
-    margin-bottom: 15px;
-    color: var(--primary-text-color);
-}
-
-.footer-items ul li {
-    color: var(--secondary-text-color);
-    font-weight: 400;
-    margin-bottom: 10px;
-}
-
-#footer-end {
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-}
+        body {
+            margin: 0 auto;
+        }
+        
+        .Home {
+            background-image: url('/img/close-up-woman-harvesting-garden.jpg');
+            height: 500px;
+            background-position: center;
+            width: 100%;
+        }
+        
+        #home-item {
+            position: absolute;
+            top: 0%;
+            max-width: 100%;
+            height: 630px;
+        }
+        
+        .navbar-custom .navbar-nav .nav-link {
+            color: #ffbb00;
+        }
+        
+        .about-image {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            width: 100%;
+            height: 100%;
+            flex-direction: column;
+        }
+        
+        .about-image img {
+            object-fit: cover;
+        }
+        
+        main {
+            margin-top: -110px;
+            position: absolute;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            right: 40px;
+        }
+        
+        .img {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+        }
+        
+        ul {
+            list-style-type: none;
+        }
+        
+        li {
+            margin-left: 10px;
+            font-weight: 700;
+        }
+        
+        .desc {
+            box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+        }
+        
+        .box {
+            margin-left: 20px;
+        }
+        
+        #Mehsul img {
+            width: 150px;
+            object-fit: cover;
+        }
+        
+        .shadow {
+            height: 630px;
+            background-color: rgba(0, 0, 0, 0.8);
+        }
+        
+        .img {
+            max-width: 100%;
+            height: 100vh;
+            object-fit: cover;
+        }
+        
+        .blog-item {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .footer {
+            width: 100%;
+            height: 400px;
+            color: black;
+            background-image: url('https://mela-dora.com/assets/img/pattern/footer-curve.svg');
+            object-fit: cover;
+        }
+        
+        .footer-items {
+            margin-top: 150px;
+            position: absolute;
+            background-color: #F3F3F3;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+        
+        #navbar {
+            position: fixed;
+            width: 100%;
+            left: 0;
+            background-color: white;
+        }
+        
+        .scroll-item {
+            right: 20px;
+            background: var(--tertiary-design-color);
+            color: var(--secondary-text-color);
+            font-size: var(--block-heading-md);
+            border: none;
+            cursor: pointer;
+            bottom: 10px;
+            position: fixed;
+            width: 40px;
+            height: 40px;
+            background-color: #ffbb00;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 2px 5px 0px rgb(0 0 0 / 10%);
+        }
+        
+        .scroll-items {
+            display: none;
+        }
+        
+        li a i {
+            font-size: 25px;
+            color: black;
+        }
+        
+        #contact i {
+            color: black;
+            font-size: 15px;
+        }
+        
+        #search {
+            display: none;
+            position: absolute;
+            top: 40px;
+            background: none;
+            background-color: rgba(0, 0, 0, 0.8);
+            left: 0;
+            right: 0;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        #search.show {
+            display: block;
+        }
+        
+        #Mehsul li.active {
+            background: #03a9f4;
+            color: white;
+            padding: 10px;
+        }
+        
+        #Mehsul li {
+            padding: 10px;
+            margin-bottom: 30px;
+            font-weight: 400;
+        }
+        
+        .hide {
+            display: none;
+        }
+        
+        #baglar h1 {
+            font-weight: 400;
+            font-size: 80px;
+        }
+        
+        #close {
+            position: absolute;
+            right: 10px;
+            cursor: pointer;
+        }
+        
+        #close i {
+            font-size: 25px;
+            color: aliceblue;
+        }
+        
+        #search.none {
+            display: none;
+        }
+        
+        a {
+            text-decoration: none;
+            color: black;
+            font-weight: 200px;
+        }
+        
+        .btn-general {
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 160px;
+            height: 45px;
+            background-color: transparent;
+            border: 1px solid var(--primary-design-color);
+            color: var(--primary-design-color);
+            font-size: var(--font-size-sm);
+            font-weight: 500;
+            padding: 10px 15px;
+            overflow: hidden;
+            border-radius: 3px;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            -ms-border-radius: 3px;
+            -o-border-radius: 3px;
+        }
+        
+        .btn-general:after {
+            position: absolute;
+            content: '';
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url(../img/Group\ 6.png);
+            background-repeat: no-repeat;
+            background-size: 30px;
+            background-position: bottom right;
+        }
+        
+        #img-items img {
+            object-fit: cover;
+            width: 352px;
+            height: 400px;
+            margin-bottom: 20px;
+        }
+        
+        .img-item {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .nav-item a {
+            color: black;
+        }
+        
+        .footer-img {
+            width: 200px;
+        }
+        
+        .footer-items h5 {
+            font-weight: 600;
+            font-size: var(--block-heading-sm);
+            margin-bottom: 15px;
+            color: var(--primary-text-color);
+        }
+        
+        .footer-items ul li {
+            color: var(--secondary-text-color);
+            font-weight: 400;
+            margin-bottom: 10px;
+        }
+        
+        #footer-end {
+            display: flex;
+            justify-content: space-around;
+            width: 100%;
+        }
+        
+        .galery-img {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .nav-item {
+            padding: 5px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+        }
+        
+        .nav-item:hover {
+            background-color: #91B40D;
+            padding: 5px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+        }
+        
+        #contact i:hover {
+            color: #91B40D;
+            transition: 0.4s ease;
+            -webkit-transition: 0.4s ease;
+            -moz-transition: 0.4s ease;
+            -ms-transition: 0.4s ease;
+            -o-transition: 0.4s ease;
+        }
+        
+        .grass {
+            animation-name: dondur;
+            animation-duration: 10000ms;
+            animation-timing-function: linear;
+            animation-delay: 100ms;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes dondur {
+            0% {
+                transform: rotate(0deg);
+                -webkit-transform: rotate(0deg);
+                -moz-transform: rotate(0deg);
+                -ms-transform: rotate(0deg);
+                -o-transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+                -webkit-transform: rotate(360deg);
+                -moz-transform: rotate(360deg);
+                -ms-transform: rotate(360deg);
+                -o-transform: rotate(360deg);
+            }
+        }
+        
+        .nav-item:nth-child(1) {
+            background-color: #91B40D;
+            padding: 5px;
+            border-radius: 5px;
+            -webkit-border-radius: 5px;
+            -moz-border-radius: 5px;
+            -ms-border-radius: 5px;
+            -o-border-radius: 5px;
+        }
