@@ -83,11 +83,9 @@ a {
 @keyframes colors {
     0% {
         filter: hue-rotate(0deg);
-        -webkit-filter: ;
     }
     100% {
         filter: hue-rotate(360deg);
-        -webkit-filter: ;
     }
 }
 
