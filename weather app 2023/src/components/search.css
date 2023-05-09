@@ -1,0 +1,99 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.wheatherApp {
+    width: 600px;
+    height: 600px;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    gap: 10px;
+    background: #CC95C0;
+    /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);
+    /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #7AA1D2, #DBD4B4, #CC95C0);
+    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.wheaterInfo {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+    padding: 10px;
+    font-size: 15px;
+    color: #141E30;
+}
+
+.wheatherInfo-top {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.wheatherInfo-bottom {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+img {
+    object-fit: cover;
+    width: 100px;
+    height: 100px;
+}
+
+header {
+    /* fallback for old browsers */
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 50px;
+    flex-direction: column;
+}
+
+header input {
+    padding: 11px 8px;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    width: 100%;
+    text-align: center;
+    background: none;
+    border: 2px solid white;
+}
+
+header button {
+    padding: 8px 10px;
+    background: none;
+    color: white;
+    margin-left: 10px;
+    border: none;
+}
+
+.error {
+    height: 200px;
+    display: flex;
+    color: indigo;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Safari */
+
+h1,
+h3 {
+    color: #141E30;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+}
