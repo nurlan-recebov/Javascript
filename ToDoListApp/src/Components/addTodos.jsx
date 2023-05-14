@@ -1,17 +1,20 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { useState, useContext } from "react";
-
-import { EmployeContext } from "../Api/contextapi";
+import { useState} from "react";
+import { AddEmploye } from "../app/features/employeSlice";
+import { useDispatch,useSelector } from "react-redux";
 
 export const AddTodos = () => {
-  const { addEmployee } = useContext(EmployeContext);
+  
   const [name, setName] = useState("");
   const [link, setLink] = useState("");
+  const {employes} = useSelector(state => state.employes)
+  const dispatch=useDispatch()
   const handleSubmit = (e) => {
     e.preventDefault();
-    addEmployee(name, link);
+    AddEmploye(name, link);
+    dispatch(AddEmploye({id:employes[employes.length-1].id+1,name,link}))
     
   };
   return (

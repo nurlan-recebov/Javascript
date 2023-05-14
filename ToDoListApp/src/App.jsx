@@ -1,17 +1,21 @@
 import React from 'react'
 import Todos from './Components/todos'
-import EmployeContextProvider from './Api/contextapi'
-import './app.css'
-
 import { AddTodos } from './Components/addTodos'
+import './app.css'
+import { store } from './app/store'
+import { Provider } from 'react-redux'
+
+
 export const App = () => {
   return (
-    <>
-      <EmployeContextProvider>
+    <div>
+   
+      
+      <Provider store={store}>
         <AddTodos></AddTodos>
       <Todos></Todos>
-      </EmployeContextProvider>
+  </Provider>
     
-    </>
+    </div>
   )
 }

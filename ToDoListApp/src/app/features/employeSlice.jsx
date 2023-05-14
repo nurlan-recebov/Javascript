@@ -4,13 +4,16 @@ export const getEmployes = createAsyncThunk('getEmployes', async() => {
     const { data } = await axios.get('http://localhost:3000/todos')
     return data
 })
+const initialState = {
+    employes: []
+}
 export const employesSlice = createSlice({
     name: 'employes',
-    initialState: {
-        employes: []
-    },
+    initialState,
     reducers: {
-
+AddEmploye: (state,action) => {
+state.employes.push(action.payload)
+}
 
     },
     extraReducers: (builder) => {
@@ -22,5 +25,5 @@ export const employesSlice = createSlice({
 
 
 
-
+export const {AddEmploye} = employesSlice.actions
 export default employesSlice.reducer
