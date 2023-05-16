@@ -14,22 +14,18 @@ export const AddTodos = () => {
   const {employes} = useSelector(state => state.employes)
   const dispatch=useDispatch()
   const navigate = useNavigate();
+
   const handleSubmit = (e) => {
     e.preventDefault();
     AddEmploye(name, link);
     dispatch(AddEmploye({id:uuidv4(),name,link}))
     
   };
-  useEffect(() => {
-   AddEmploye()
-  }, [employes]);
+ 
  
   return (
     <div style={{ marginBottom: "20px" }}>
-      <Button
-   onClick={() => navigate("/")}>
-Back
-</Button>
+     <Button onClick={() => navigate("/")}>Back</Button>
       <div>AddTodos</div>
       <form
         onSubmit={handleSubmit}

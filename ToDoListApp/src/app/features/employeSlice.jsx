@@ -6,21 +6,32 @@ export const getEmployes = createAsyncThunk("getEmployes", async () => {
 });
 const initialState = {
   employes: [],
+  detail: {},
 };
+
 export const employesSlice = createSlice({
   name: "employes",
+  name: "detail",
   initialState,
   reducers: {
     AddEmploye: (state, action) => {
       state.employes.push(action.payload);
     },
+
+    setDetail: (state, action) => {
+      console.log(action.payload);
+      state.detail = action.payload;
+    },
   },
+
   extraReducers: (builder) => {
     builder.addCase(getEmployes.fulfilled, (state, action) => {
-      state.employes = action.payload;
+      if (state.employes.length === 0) {
+        state.employes = action.payload;
+      }
     });
   },
 });
 
-export const { AddEmploye } = employesSlice.actions;
+export const { AddEmploye, setDetail } = employesSlice.actions;
 export default employesSlice.reducer;

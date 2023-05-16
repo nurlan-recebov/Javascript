@@ -1,4 +1,5 @@
-import { useContext, useState, useEffect } from "react";
+import React from 'react'
+
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import CardContent from "@mui/material/CardContent";
@@ -9,43 +10,21 @@ import { useSelector, useDispatch } from "react-redux";
 import { getEmployes, setDetail } from "../app/features/employeSlice";
 import { useNavigate, useLocation } from "react-router-dom";
 import Button from "@mui/material/Button";
+export const Detail = () => {
 
-function Todos() {
-  const dispatch = useDispatch();
 
-  const { employes } = useSelector((state) => state.employes);
-  const navigate = useNavigate();
-
-  const location = useLocation();
-
-  function getDetails(data) {
-    dispatch(setDetail(data));
-    navigate("/Detail");
-  }
-
-  useEffect(() => {
-    dispatch(getEmployes());
-  }, []);
+    let employe = useSelector((state)=>state.employes.detail)
+    const navigate = useNavigate();
 
   return (
-    <div
-      style={{
-        maxWidth: "1000px",
-        display: "flex",
-        justifyContent: "center",
-        flexDirection: "column",
-      }}
-    >
-      <Button onClick={() => navigate("/Add")}>Add Todos</Button>
-      <Grid container spacing={2}>
-        {employes.map((employe) => {
-          return (
-            <Grid item xs={4} key={employe.id}>
-              <Card sx={{ maxWidth: "345px" }}>
+    <div>
+        <Button onClick={() => navigate("/")}>Back</Button>
+         <Grid item xs={4} key={employe.id}>
+              <Card sx={{ maxWidth: "600px" }}>
                 <CardActionArea>
                   <CardMedia
                     component="img"
-                    height="140"
+                    height="420"
                     image={employe.link}
                     alt="green iguana"
                   />
@@ -59,15 +38,12 @@ function Todos() {
                       Antarctica
                     </Typography>
                   </CardContent>
-                  <Button onClick={() => getDetails(employe)}>Detail</Button>
+                
                 </CardActionArea>
               </Card>
             </Grid>
-          );
-        })}
-      </Grid>
-    </div>
-  );
-}
 
-export default Todos;
+
+    </div>
+  )
+}

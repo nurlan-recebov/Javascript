@@ -6,7 +6,7 @@ import { store } from './app/store'
 import { Provider } from 'react-redux'
 import { AddTodos } from './Components/addTodos'
 import { BrowserRouter,Route,Routes } from 'react-router-dom'
-
+import { Detail } from './Components/detail'
 
 export const App = () => {
  
@@ -18,7 +18,7 @@ export const App = () => {
       <Routes>
 <Route exact path='/' element={<Todos/>}/>
 <Route exact path='/Add' element={<AddTodos/>}/>
-
+<Route exact path='/Detail' element={<Detail/>}/>
 
 
       </Routes>
