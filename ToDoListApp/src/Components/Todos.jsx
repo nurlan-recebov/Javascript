@@ -7,18 +7,24 @@ import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 import { useSelector, useDispatch } from "react-redux";
 import { getEmployes } from "../app/features/employeSlice";
+import { useNavigate,useLocation } from "react-router-dom";
+import Button from '@mui/material/Button';
 
 function Todos() {
   const dispatch = useDispatch();
   const { employes } = useSelector((state) => state.employes);
-
+  const navigate = useNavigate();
+  
+  const location = useLocation();
   useEffect(() => {
     dispatch(getEmployes());
-  }, []);
+  }, [employes]);
+  
   return (
     <div
-      style={{ maxWidth: "1000px", display: "flex", justifyContent: "center" }}
+      style={{ maxWidth: "1000px", display: "flex", justifyContent: "center",flexDirection:"column" }}
     >
+      <Button onClick={() => navigate("/Add")}>Add Todos</Button>
       <Grid container spacing={2}>
         {employes.map((employe) => {
           return (

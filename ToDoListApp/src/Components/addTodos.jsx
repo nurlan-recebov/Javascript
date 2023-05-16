@@ -1,24 +1,35 @@
 import React from "react";
 import Box from "@mui/material/Box";
 import TextField from "@mui/material/TextField";
-import { useState} from "react";
+import { useState,useEffect} from "react";
 import { AddEmploye } from "../app/features/employeSlice";
 import { useDispatch,useSelector } from "react-redux";
-
+import { useNavigate } from "react-router-dom";
+import Button from '@mui/material/Button';
+import { v4 as uuidv4 } from "uuid";
 export const AddTodos = () => {
   
   const [name, setName] = useState("");
   const [link, setLink] = useState("");
   const {employes} = useSelector(state => state.employes)
   const dispatch=useDispatch()
+  const navigate = useNavigate();
   const handleSubmit = (e) => {
     e.preventDefault();
     AddEmploye(name, link);
-    dispatch(AddEmploye({id:employes[employes.length-1].id+1,name,link}))
+    dispatch(AddEmploye({id:uuidv4(),name,link}))
     
   };
+  useEffect(() => {
+   AddEmploye()
+  }, [employes]);
+ 
   return (
     <div style={{ marginBottom: "20px" }}>
+      <Button
+   onClick={() => navigate("/")}>
+Back
+</Button>
       <div>AddTodos</div>
       <form
         onSubmit={handleSubmit}
@@ -51,7 +62,7 @@ export const AddTodos = () => {
           style={{ padding: "2px 10px", background: "grey", color: "white" }}
           type="submit"
         >
-          {" "}
+          
           Add
         </button>
       </form>
