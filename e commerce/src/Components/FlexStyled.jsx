@@ -6,5 +6,6 @@ flex-wrap:wrap;
 justify-content: center;
 align-items:center;
 width:100%;
+
 `;
 export default Flex;

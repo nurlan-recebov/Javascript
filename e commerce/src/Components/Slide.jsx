@@ -1,7 +1,7 @@
 import Carousel from "react-bootstrap/Carousel";
-import logo from "./img/slider3.jpg";
-import logo1 from "./img/slider8.jpg";
-import logo2 from "./img/slider1.jpg";
+import logo from "../assets/img/slider3.jpg";
+import logo1 from "../assets/img/slider8.jpg";
+import logo2 from "../assets/img/slider1.jpg";
 import Button from "./ButtonStyled";
 function IndividualIntervalsExample() {
   return (
